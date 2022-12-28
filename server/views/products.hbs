@@ -1,0 +1,26 @@
+<div class="mt-5 flex flex-col text-center">
+  <h2 class="text-xl">Products</h2>
+  <div class="overflow-x-auto mt-5">
+    <table class="table table-zebra w-full">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Picture</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#if products.length}}
+          {{#each products}}
+            <tr>
+              <th></th>
+              <td>{{this.name}}</td>
+              <td>${{this.price}}</td>
+              <td class="w-1/3"><img class="w-1/2" src={{this.url}} /></td>
+            </tr>
+          {{/each}}
+        {{/if}}
+      </tbody>
+    </table>
+  </div>

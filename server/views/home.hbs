@@ -1,0 +1,137 @@
+<div class="flex justify-center">
+  <div class="sm:m-10 w-full sm:w-3/4 bg-gray-800 p-5 pt-20 sm:p-10 sm:rounded-box h-fit">
+    <!--WELCOME-->
+    <section>
+      <div class="flex justify-between font-semibold rounded-box bg-yellow-500 items-center px-5 py-3 mb-5">
+        <h1 class="text-3xl text-amber-900">
+          ¡Welcome <span id="username">{{username}}!</span>
+        </h1>
+        <input class="btn border-none bg-amber-900 hover:bg-amber-700 text-white px-0" onclick="location.href = '/logout'" value="Logout"/>
+      </div>
+    </section>
+    <!--FIN WELCOME-->
+    <!--PRODUCTOS FORM / TABLE-->
+    <section class="text-white">
+      <h2 class="text-2xl">Products</h2>
+      <form class="form-control flex gap-3" id="enviarProducto">
+        <div>
+          <label class="label">
+            <span class="label-text">Product name</span>
+          </label>
+          <label class="input-group">
+            <span>Name</span>
+            <input
+              type="text"
+              placeholder="Book"
+              class="input input-bordered w-full"
+              id="nombreProducto"
+            />
+          </label>
+        </div>
+        <div>
+          <label class="label">
+            <span class="label-text">Enter amount</span>
+          </label>
+          <label class="input-group">
+            <span>Price</span>
+            <input
+              type="number"
+              placeholder="10"
+              class="input input-bordered w-full"
+              id="precioProducto"
+            />
+          </label>
+        </div>
+        <div>
+          <label class="label">
+            <span class="label-text">Thumbnail URL</span>
+          </label>
+          <label class="input-group">
+            <span>URL</span>
+            <input
+              type="text"
+              placeholder="https://smartmobilestudio.com/wp-content/uploads/2012/06/leather-book-preview.png"
+              class="input input-bordered w-full"
+              id="urlProducto"
+            />
+          </label>
+        </div>
+        <div class="flex">
+          <input type="submit" class="btn border-none bg-blue-500 text-white" value="Submit" />
+        </div>
+      </form>
+      <div class="overflow-x-auto">
+        <table
+          class="table table-compact sm:table-normal w-full my-5 text-center"
+        >
+          <!-- head -->
+          <thead class="text-white">
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Picture</th>
+            </tr>
+          </thead>
+          <tbody id="products"></tbody>
+        </table>
+      </div>
+    </section>
+    <!--FIN PRODUCTOS FORM / TABLE-->
+    <!--COMIENZA CHAT FORM / DISPLAY-->
+    <section class="text-white flex flex-col gap-3">
+      <h2 class="text-2xl">Chat</h2>
+      <!--form message-->
+      <div>
+        <form
+          class="flex flex-col sm:flex-row items-center text-black gap-3"
+          id="enviarMensaje"
+          action="#"
+        >
+          <input
+            class="text-black p-2 bg-white input input-bordered"
+            required
+            type="text"
+            placeholder="Your username..."
+            name="usernameAlias"
+            id="usernameAlias"
+          />
+          <input
+            class="text-black p-2 bg-white input input-bordered"
+            required
+            type="text"
+            placeholder="Your message..."
+            name="message"
+            id="messageInput"
+          />
+          <button
+            class="btn border-none bg-purple-700"
+            type="submit"
+            value="Send"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5 text-white"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+              />
+            </svg>
+          </button>
+        </form>
+      </div>
+      <!--termina form message-->
+      <div class="max-h-96 overflow-x-auto">
+        <div class="w-full rounded-lg bg-gray-200 text-black p-6 max-h-full">
+          <ul id="messageOutput" class="flex flex-col gap-2 items-end"></ul>
+        </div>
+      </div>
+    </section>
+    <!--TERMINA CHAT FORM / DISPLAY-->
+  </div>
+</div>
